@@ -14,9 +14,9 @@ double findT(double a, double b, double c, double d, double e, double f) {
 	return t;
 }
 	
-int main ( int argc char** argv ) {
+int main ( int argc, char** argv ) {
 	double points[8];
-	double n;
+	int n;
 	int point = 0;
 	while( scanf("%d", &n ) != EOF ) {
 		points[point] = n;
@@ -30,12 +30,17 @@ int main ( int argc char** argv ) {
 	double f = points[6] - points[4];
 	double s = findS(a, b, c, d, e, f);
 	double t = findT(a, b, c, d, e, f);
-	if ( 0 <= s || s <= 1 ) {
-		if ( 0 <= t || t <= 1 ) {
-			printf("Lines do intersect");
+	if ( 0 <= s && s <= 1 ) {
+		if ( 0 <= t && t <= 1 ) {
+			printf("Lines do intersect \n");
 		}//if
+		else {
+			printf("Lines do not intersect \n");
+		}//else
 	}//if
 	else {
-		printf("Lines do not intersect");
+		printf("Lines do not intersect \n");
 	}//else
+	printf("%f \n", t);
+	printf("%f", s);
 }//main
